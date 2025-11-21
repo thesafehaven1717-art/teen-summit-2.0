@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Summit 2.0 - Complete Platform Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-orange: hsl(25, 95%, 53%);
+      --primary-blue: hsl(210, 100%, 56%);
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #6b6b6b;
+      --border-color: #e0e0e0;
+      --bg-light: #fafafa;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: white;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    /* Header / Branding */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid var(--primary-orange);
+    }
+    
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    
+    .header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    
+    .header .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    .brand-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary-orange) 0%, var(--primary-blue) 100%);
+      margin: 30px 0;
+    }
+    
+    /* Typography */
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--primary-orange);
+      margin: 50px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-orange);
+    }
+    
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      margin: 35px 0 15px;
+    }
+    
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin: 25px 0 12px;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: var(--text-secondary);
+    }
+    
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    
+    /* Lists */
+    ul, ol {
+      margin: 15px 0 15px 30px;
+      color: var(--text-secondary);
+    }
+    
+    li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    
+    /* Table of Contents */
+    .toc {
+      background: var(--bg-light);
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-orange);
+      margin: 30px 0;
+    }
+    
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      border: none;
+      padding: 0;
+    }
+    
+    .toc ol {
+      margin-left: 20px;
+    }
+    
+    .toc li {
+      margin-bottom: 8px;
+    }
+    
+    .toc a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Callout Boxes */
+    .callout {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(30, 144, 255, 0.05) 100%);
+      border-left: 4px solid var(--primary-orange);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+    }
+    
+    .callout h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    
+    .callout-blue {
+      border-left-color: var(--primary-blue);
+    }
+    
+    /* Feature Lists */
+    .feature-list {
+      background: var(--bg-light);
+      padding: 25px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    .feature-list ul {
+      margin-left: 20px;
+    }
+    
+    .checkmark::before {
+      content: "✓ ";
+      color: var(--primary-orange);
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 3px solid var(--primary-blue);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    .footer p {
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        padding: 20px;
+      }
+      
+      h2 {
+        page-break-after: avoid;
+      }
+      
+      .callout, .feature-list {
+        page-break-inside: avoid;
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+      body {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <img src="/Teens_black_tracksuits_orange_blue_9b156a60.png" alt="Teen Summit 2.0 Logo" class="logo">
+    <h1>Teen Summit 2.0</h1>
+    <p class="subtitle">Complete Platform Guide</p>
+  </div>
+
+  <div class="brand-bar"></div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#what-is">What is Teen Summit 2.0?</a></li>
+      <li><a href="#how-it-works">How the Platform Works</a></li>
+      <li><a href="#who-can-use">Who Can Use the Platform</a></li>
+      <li><a href="#navigation">Navigating the Website</a></li>
+      <li><a href="#prospective">For Prospective Participants</a></li>
+      <li><a href="#cast-portal">Cast Member Portal</a></li>
+      <li><a href="#parent-portal">Parent Portal</a></li>
+      <li><a href="#educator-portal">Educator Portal</a></li>
+      <li><a href="#public-content">Public Content</a></li>
+      <li><a href="#getting-started">Getting Started Guide</a></li>
+    </ol>
+  </div>
+
+  <!-- Main Content -->
+  <section id="what-is">
+    <h2>What is Teen Summit 2.0?</h2>
+    <p>Teen Summit 2.0 is a reimagined civic media platform that empowers young people through debate, musicology, and podcasting. It's a <strong>12-week program (Spring 2026)</strong> where selected teens—called "Summiters"—participate in an elite, world-class educational experience combining academic rigor with modern media production.</p>
+
+    <div class="callout">
+      <h3>The Program Structure: Three Acts of Transformation</h3>
+      
+      <h4>ACT I: Debate</h4>
+      <ul>
+        <li>Teens learn structured argumentation and critical thinking</li>
+        <li>Develop public speaking skills</li>
+        <li>Engage in evidence-based discussions on important issues</li>
+      </ul>
+
+      <h4>ACT II: Musicology</h4>
+      <ul>
+        <li>Study music as cultural practice and knowledge production</li>
+        <li>Learn DJ turntablism, sampling, and beat-making</li>
+        <li>Understand hip-hop culture and creative collaboration</li>
+      </ul>
+
+      <h4>ACT III: Podcast</h4>
+      <ul>
+        <li>Professional media production and broadcasting</li>
+        <li>Create compelling audio narratives</li>
+        <li>Build personal brands through media</li>
+      </ul>
+    </div>
+
+    <div class="callout callout-blue">
+      <h3>Program Completion: The Pinning Ceremony</h3>
+      <p>After completing all three acts, Summiters participate in a formal Pinning Ceremony where they receive an official Teen Summit 2.0 pin, symbolizing their mastery of civic discourse, cultural knowledge, and media literacy.</p>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How the Platform Works</h2>
+    <p>The Teen Summit 2.0 platform is a comprehensive digital hub that serves multiple purposes:</p>
+
+    <h3>1. Public-Facing Website</h3>
+    <p>Anyone can visit the main website to learn about the program, watch published episodes, read blog posts, and access educational materials.</p>
+
+    <h3>2. Application System</h3>
+    <p>The platform accepts applications from:</p>
+    <ul>
+      <li>Teens who want to become Summiters</li>
+      <li>Volunteers who want to support the program</li>
+      <li>Guest speakers who want to share their expertise</li>
+      <li>Anyone interested in receiving the newsletter</li>
+    </ul>
+
+    <h3>3. Authenticated Portals</h3>
+    <p>Special login areas for different user groups:</p>
+    <ul>
+      <li><strong>Cast Members</strong> (teen participants and staff)</li>
+      <li><strong>Parents</strong> (to track their teen's progress)</li>
+      <li><strong>Educators</strong> (to access curriculum resources)</li>
+    </ul>
+
+    <h3>4. Content Management</h3>
+    <p>The platform manages:</p>
+    <ul>
+      <li>Video episodes with cloud storage</li>
+      <li>Blog posts with approval workflow</li>
+      <li>Research materials (dossiers)</li>
+      <li>Filming schedules</li>
+      <li>Social media analytics</li>
+    </ul>
+  </section>
+
+  <section id="who-can-use">
+    <h2>Who Can Use the Platform</h2>
+
+    <h3>General Public</h3>
+    <ul>
+      <li><strong>No login required</strong></li>
+      <li>Can view episodes, blog posts, and program information</li>
+      <li>Can apply to participate</li>
+      <li>Can sign up for the newsletter</li>
+    </ul>
+
+    <h3>Prospective Summiters (Teens)</h3>
+    <ul>
+      <li><strong>Ages:</strong> High school students</li>
+      <li><strong>Commitment:</strong> 12-week program (Spring 2026)</li>
+      <li><strong>Process:</strong> Submit application → Selection process → If chosen, join as Cast Member</li>
+      <li><strong>Benefits:</strong> Develop three forms of capital (Intellectual, Social, Financial)</li>
+    </ul>
+
+    <h3>Cast Members (Authenticated)</h3>
+    <ul>
+      <li><strong>Who:</strong> Selected teen participants and staff</li>
+      <li><strong>Access:</strong> Special dashboard with multiple features</li>
+      <li><strong>Role:</strong> Active program participants</li>
+    </ul>
+
+    <h3>Parents (Authenticated)</h3>
+    <ul>
+      <li><strong>Who:</strong> Parents/guardians of Cast Members</li>
+      <li><strong>Access:</strong> Parent Portal</li>
+      <li><strong>Purpose:</strong> Monitor progress and stay informed</li>
+    </ul>
+
+    <h3>Educators (Authenticated)</h3>
+    <ul>
+      <li><strong>Who:</strong> Teachers and educational professionals</li>
+      <li><strong>Access:</strong> Educator Portal</li>
+      <li><strong>Purpose:</strong> Access curriculum resources and teaching materials</li>
+    </ul>
+
+    <h3>Volunteers & Guests</h3>
+    <ul>
+      <li><strong>Who:</strong> Community supporters and expert speakers</li>
+      <li><strong>Process:</strong> Apply through dedicated forms</li>
+      <li><strong>Role:</strong> Support program activities</li>
+    </ul>
+  </section>
+
+  <section id="navigation">
+    <h2>Navigating the Website</h2>
+
+    <h3>Main Navigation Menu</h3>
+    <ul>
+      <li><strong>Home:</strong> Landing page with program overview</li>
+      <li><strong>Episodes:</strong> Watch published episodes of Teen Summit 2.0</li>
+      <li><strong>Blog:</strong> Read articles from cast members and staff</li>
+      <li><strong>Dossiers:</strong> Access research materials for debate preparation</li>
+      <li><strong>Contact:</strong> Send general inquiries</li>
+      <li><strong>About / Impact / Get Involved:</strong> Learn more about the program's mission and how to participate</li>
+    </ul>
+
+    <h3>Special Access</h3>
+    <ul>
+      <li><strong>Cast Login:</strong> Button in top-right corner for authenticated users</li>
+      <li><strong>Mobile Menu:</strong> Hamburger icon (☰) on mobile devices shows all navigation options</li>
+    </ul>
+  </section>
+
+  <section id="prospective">
+    <h2>For Prospective Participants</h2>
+
+    <div class="callout">
+      <h3>How to Apply as a Summiteer</h3>
+      
+      <h4>Step 1: Visit the Application Page</h4>
+      <ul>
+        <li>Navigate to "Get Involved" section</li>
+        <li>Click "Apply as Summiteer"</li>
+      </ul>
+
+      <h4>Step 2: Complete the Application Form</h4>
+      <p><strong>Required information:</strong></p>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>School name</li>
+        <li>Grade level</li>
+        <li>Why you want to join</li>
+        <li>Your interests</li>
+        <li>How you heard about the program</li>
+      </ul>
+
+      <h4>Step 3: Submit Your Application</h4>
+      <ul>
+        <li>Click submit</li>
+        <li>You'll receive confirmation</li>
+        <li>Selection committee reviews applications</li>
+        <li>Chosen participants are notified</li>
+      </ul>
+
+      <h4>Step 4: If Accepted</h4>
+      <ul>
+        <li>Receive login credentials</li>
+        <li>Access Cast Member Portal</li>
+        <li>Begin your 12-week journey</li>
+      </ul>
+    </div>
+
+    <h3>Other Ways to Get Involved</h3>
+
+    <h4>Newsletter Signup</h4>
+    <ul>
+      <li>Stay informed about program updates</li>
+      <li>No commitment required</li>
+      <li>Just provide name and email</li>
+    </ul>
+
+    <h4>Volunteer Application</h4>
+    <ul>
+      <li>Support program logistics</li>
+      <li>Work behind the scenes</li>
+      <li>Complete volunteer form</li>
+    </ul>
+
+    <h4>Guest Speaker Application</h4>
+    <ul>
+      <li>Share your expertise</li>
+      <li>Participate in specific episodes</li>
+      <li>Complete guest application form</li>
+    </ul>
+  </section>
+
+  <section id="cast-portal">
+    <h2>Cast Member Portal</h2>
+
+    <h3>What is the Cast Member Portal?</h3>
+    <p>A private, authenticated dashboard where Summiters manage their participation, create content, track their growth, and collaborate with the team.</p>
+
+    <h3>How to Access</h3>
+    <ol>
+      <li>Navigate to main website</li>
+      <li>Click "Cast Login" button</li>
+      <li>Enter your username and password</li>
+      <li>Access your personalized dashboard</li>
+    </ol>
+
+    <h3>Dashboard Features</h3>
+
+    <h4>1. Profile Tab</h4>
+    <ul>
+      <li>View and edit your profile information</li>
+      <li>Update contact details</li>
+      <li>Manage account settings</li>
+    </ul>
+
+    <h4>2. Episodes Tab</h4>
+    <p><strong>For Authorized Members Only</strong></p>
+    <ul>
+      <li>Create new episodes</li>
+      <li>Upload episode videos (up to 500MB)</li>
+      <li>Add episode thumbnails</li>
+      <li>Write descriptions</li>
+      <li>Set publish status (Draft or Published)</li>
+      <li>Edit existing episodes</li>
+    </ul>
+    <p><strong>Features:</strong> Video Upload with drag-and-drop, Thumbnail Upload, Status Control</p>
+
+    <h4>3. Academic Civic NILS Tracker</h4>
+    <p>Track your social media growth and personal brand development.</p>
+    <p><strong>What is Academic Civic NILS?</strong> NILS = Name, Image, Likeness, Story</p>
+    
+    <p><strong>What You Track:</strong></p>
+    <ul>
+      <li>Instagram followers and engagement</li>
+      <li>TikTok metrics</li>
+      <li>Twitter/X growth</li>
+      <li>YouTube subscribers</li>
+      <li>LinkedIn connections</li>
+    </ul>
+
+    <p><strong>Resources Provided:</strong></p>
+    <ul>
+      <li>Content ideas for your platform</li>
+      <li>Growth tips and strategies</li>
+      <li>Platform-specific best practices</li>
+      <li>Brand building guidance</li>
+    </ul>
+
+    <h4>4. Blog Posts Tab</h4>
+    <p>Create and manage blog content.</p>
+    
+    <p><strong>Workflow:</strong></p>
+    <ol>
+      <li><strong>Create</strong> - Write your blog post</li>
+      <li><strong>Draft</strong> - Save as draft</li>
+      <li><strong>Submit</strong> - Send for approval</li>
+      <li><strong>Approved</strong> - Admin approves</li>
+      <li><strong>Published</strong> - Appears on public blog</li>
+    </ol>
+
+    <p><strong>Blog Categories:</strong></p>
+    <ul>
+      <li>Cast Reflections</li>
+      <li>Behind the Scenes</li>
+      <li>Community Impact</li>
+      <li>Teen Voices</li>
+    </ul>
+
+    <h4>5. Dossiers Tab</h4>
+    <p><strong>Admin-Only Feature</strong></p>
+    <p>Research materials management:</p>
+    <ul>
+      <li>Upload debate research materials</li>
+      <li>Organize by topic (Healthcare, Education, Climate, etc.)</li>
+      <li>Make materials available to all cast members</li>
+      <li>Track download analytics</li>
+    </ul>
+
+    <p><strong>For Non-Admin Cast Members:</strong></p>
+    <ul>
+      <li>View available dossiers</li>
+      <li>Download research materials</li>
+      <li>Access debate preparation resources</li>
+    </ul>
+
+    <h4>6. Filming Schedule Tab</h4>
+    <p>Stay organized with production schedule.</p>
+    <ul>
+      <li>Upcoming filming dates</li>
+      <li>Location information</li>
+      <li>Call times</li>
+      <li>Episode assignments</li>
+      <li>Your specific schedule</li>
+    </ul>
+
+    <h4>7. Team Tab</h4>
+    <p>Connect with other cast members.</p>
+    <ul>
+      <li>Other Summiters in the program</li>
+      <li>Staff members</li>
+      <li>Profile pictures</li>
+      <li>Contact information</li>
+      <li>Roles and responsibilities</li>
+    </ul>
+  </section>
+
+  <section id="parent-portal">
+    <h2>Parent Portal</h2>
+
+    <h3>Purpose</h3>
+    <p>Keep parents informed and engaged in their teen's Teen Summit 2.0 journey.</p>
+
+    <h3>How to Access</h3>
+    <ol>
+      <li>Receive login credentials when your teen is accepted</li>
+      <li>Visit website and click "Cast Login"</li>
+      <li>Log in with parent credentials</li>
+      <li>Access Parent Portal</li>
+    </ol>
+
+    <h3>What Parents Can See</h3>
+
+    <h4>Cast Member Information</h4>
+    <ul>
+      <li>Your teen's profile</li>
+      <li>Program role</li>
+      <li>Contact information</li>
+    </ul>
+
+    <h4>Filming Schedule</h4>
+    <ul>
+      <li>All upcoming filming dates</li>
+      <li>Locations</li>
+      <li>Times</li>
+      <li>Transportation details</li>
+    </ul>
+
+    <h4>Episode Appearances</h4>
+    <ul>
+      <li>Episodes your teen participated in</li>
+      <li>Air dates</li>
+      <li>Episode descriptions</li>
+      <li>Video links</li>
+    </ul>
+
+    <h4>Recent Activity</h4>
+    <ul>
+      <li>Latest blog posts</li>
+      <li>Schedule updates</li>
+      <li>Important announcements</li>
+    </ul>
+
+    <h4>Parent Amenities</h4>
+    <p>Information about:</p>
+    <ul>
+      <li><strong>Seating:</strong> Reserved seating for parents at tapings</li>
+      <li><strong>Meals:</strong> Meal provisions during filming days</li>
+      <li><strong>Production Viewing:</strong> Opportunities to watch production</li>
+    </ul>
+
+    <h3>Benefits for Parents</h3>
+    <ul>
+      <li>Stay informed about schedule</li>
+      <li>Track teen's participation</li>
+      <li>Understand program activities</li>
+      <li>Connect with program coordinators</li>
+      <li>Support your teen's journey</li>
+    </ul>
+  </section>
+
+  <section id="educator-portal">
+    <h2>Educator Portal</h2>
+
+    <h3>Purpose</h3>
+    <p>Provide teachers with curriculum resources aligned with Teen Summit 2.0 content.</p>
+
+    <h3>How to Access</h3>
+    <ol>
+      <li>Request educator access</li>
+      <li>Receive login credentials</li>
+      <li>Visit website and click "Cast Login"</li>
+      <li>Log in with educator credentials</li>
+      <li>Access Educator Portal</li>
+    </ol>
+
+    <h3>What Educators Can Access</h3>
+
+    <h4>Episode Library</h4>
+    <ul>
+      <li>Complete catalog of published episodes</li>
+      <li>Episode descriptions</li>
+      <li>Discussion topics</li>
+      <li>Educational themes</li>
+    </ul>
+
+    <h4>Statistics</h4>
+    <ul>
+      <li>Total episodes available</li>
+      <li>Content categories</li>
+      <li>Topic coverage</li>
+    </ul>
+
+    <h4>Curriculum Resources</h4>
+    
+    <p><strong>Lesson Plans:</strong></p>
+    <ul>
+      <li>Pre-made lesson plans aligned with episodes</li>
+      <li>Learning objectives</li>
+      <li>Activities and assessments</li>
+      <li>Time estimates</li>
+    </ul>
+
+    <p><strong>Discussion Guides:</strong></p>
+    <ul>
+      <li>Structured discussion questions</li>
+      <li>Facilitation tips</li>
+      <li>Debate prompts</li>
+      <li>Critical thinking exercises</li>
+    </ul>
+
+    <p><strong>Standards Alignment:</strong></p>
+    <ul>
+      <li>Common Core connections</li>
+      <li>State standards alignment</li>
+      <li>Learning competencies</li>
+    </ul>
+
+    <p><strong>Professional Development:</strong></p>
+    <ul>
+      <li>Teaching strategies</li>
+      <li>Facilitation techniques</li>
+      <li>Civic education resources</li>
+    </ul>
+
+    <h3>Benefits for Educators</h3>
+    <ul>
+      <li>Ready-to-use curriculum materials</li>
+      <li>Engaging, relevant content for students</li>
+      <li>Civic education resources</li>
+      <li>Media literacy integration</li>
+      <li>Free, high-quality teaching materials</li>
+    </ul>
+  </section>
+
+  <section id="public-content">
+    <h2>Public Content</h2>
+
+    <h3>Episodes Page</h3>
+    <p><strong>What You'll Find:</strong></p>
+    <ul>
+      <li>Published episodes of Teen Summit 2.0</li>
+      <li>Video player for each episode</li>
+      <li>Episode descriptions</li>
+      <li>Topics covered</li>
+      <li>Air dates</li>
+    </ul>
+
+    <p><strong>How to Watch:</strong></p>
+    <ol>
+      <li>Navigate to "Episodes" in main menu</li>
+      <li>Browse available episodes</li>
+      <li>Click on an episode</li>
+      <li>Watch using built-in video player</li>
+    </ol>
+
+    <h3>Blog Page</h3>
+    <p><strong>What You'll Find:</strong></p>
+    <ul>
+      <li>Articles from cast members</li>
+      <li>Behind-the-scenes stories</li>
+      <li>Community impact pieces</li>
+      <li>Teen perspectives</li>
+    </ul>
+
+    <p><strong>Categories:</strong> Cast Reflections, Behind the Scenes, Community Impact, Teen Voices</p>
+
+    <h3>Dossiers Page</h3>
+    <p><strong>What You'll Find:</strong></p>
+    <ul>
+      <li>Public research materials</li>
+      <li>Debate resources</li>
+      <li>Educational documents</li>
+      <li>Topic-organized materials</li>
+    </ul>
+
+    <p><strong>Available Topics:</strong> Healthcare, Education, Climate Change, Social Justice, Technology, and more</p>
+
+    <p><strong>File Formats:</strong> PDF, DOC/DOCX, TXT</p>
+  </section>
+
+  <section id="getting-started">
+    <h2>Getting Started Guide</h2>
+
+    <div class="callout">
+      <h3>For New Visitors</h3>
+      <ol>
+        <li><strong>Explore the Homepage</strong> - Read about the program, watch intro video, learn about the Three Acts</li>
+        <li><strong>Browse Public Content</strong> - Watch episodes, read blog posts, understand impact</li>
+        <li><strong>Decide How to Engage</strong> - Apply as Summiteer? Newsletter? Volunteer? Educator?</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-blue">
+      <h3>For Prospective Summiters</h3>
+      <ol>
+        <li><strong>Read Program Requirements</strong> - Understand 12-week commitment, review Three Acts</li>
+        <li><strong>Complete Application</strong> - Fill out form honestly and thoughtfully</li>
+        <li><strong>Wait for Selection</strong> - Committee reviews applications</li>
+        <li><strong>If Accepted</strong> - Receive credentials, access portal, begin journey</li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <h3>For Cast Members (First Login)</h3>
+      <ol>
+        <li><strong>Log In</strong> - Click "Cast Login", enter credentials</li>
+        <li><strong>Complete Profile</strong> - Fill in information, add photo</li>
+        <li><strong>Set Up NILS Tracking</strong> - Add social media handles, review resources</li>
+        <li><strong>Review Schedule</strong> - Check filming dates, mark calendar</li>
+        <li><strong>Start Creating</strong> - Begin blog drafts, download dossiers</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-blue">
+      <h3>For Parents (First Login)</h3>
+      <ol>
+        <li><strong>Log In</strong> - Use parent credentials</li>
+        <li><strong>Review Information</strong> - Check teen's profile, view schedule, read amenities</li>
+        <li><strong>Stay Engaged</strong> - Check portal weekly, attend filming, support participation</li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <h3>For Educators (First Login)</h3>
+      <ol>
+        <li><strong>Log In</strong> - Use educator credentials</li>
+        <li><strong>Explore Resources</strong> - Browse episodes, download lesson plans, review guides</li>
+        <li><strong>Integrate Into Curriculum</strong> - Select episodes, plan lessons, engage students</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Technology & Features -->
+  <section>
+    <h2>Understanding the Technology</h2>
+
+    <h3>Cloud-Based Platform</h3>
+    <p>All videos and files are stored securely in cloud storage, ensuring they're always accessible and backed up.</p>
+
+    <h3>User Authentication</h3>
+    <p>Login systems protect private information and ensure only authorized users can access special features.</p>
+
+    <h3>Mobile-Friendly Design</h3>
+    <p>The entire website works on phones, tablets, and computers—access anywhere, anytime.</p>
+
+    <h3>Video Streaming</h3>
+    <p>Episodes stream directly in your browser—no downloads needed.</p>
+
+    <h3>Real-Time Updates</h3>
+    <p>When new content is published, it appears immediately on the site.</p>
+  </section>
+
+  <!-- Key Features -->
+  <section>
+    <h2>Key Features Summary</h2>
+
+    <div class="feature-list">
+      <h3>Public Access (No Login)</h3>
+      <ul>
+        <li class="checkmark">Watch episodes</li>
+        <li class="checkmark">Read blog posts</li>
+        <li class="checkmark">Download dossiers</li>
+        <li class="checkmark">Submit applications</li>
+        <li class="checkmark">Sign up for newsletter</li>
+        <li class="checkmark">Contact the team</li>
+      </ul>
+    </div>
+
+    <div class="feature-list">
+      <h3>Cast Member Access (Login Required)</h3>
+      <ul>
+        <li class="checkmark">Personal dashboard</li>
+        <li class="checkmark">Create/edit episodes (authorized members)</li>
+        <li class="checkmark">Write blog posts</li>
+        <li class="checkmark">Track social media analytics</li>
+        <li class="checkmark">Access filming schedule</li>
+        <li class="checkmark">Upload content</li>
+        <li class="checkmark">Manage profile</li>
+      </ul>
+    </div>
+
+    <div class="feature-list">
+      <h3>Parent Access (Login Required)</h3>
+      <ul>
+        <li class="checkmark">View teen's profile</li>
+        <li class="checkmark">See filming schedule</li>
+        <li class="checkmark">Track episode appearances</li>
+        <li class="checkmark">Access parent amenities info</li>
+        <li class="checkmark">Stay updated on activities</li>
+      </ul>
+    </div>
+
+    <div class="feature-list">
+      <h3>Educator Access (Login Required)</h3>
+      <ul>
+        <li class="checkmark">Episode library</li>
+        <li class="checkmark">Lesson plans</li>
+        <li class="checkmark">Discussion guides</li>
+        <li class="checkmark">Curriculum resources</li>
+        <li class="checkmark">Professional development materials</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section>
+    <h2>Program Leadership</h2>
+
+    <h3>Dr. McKee</h3>
+    <p><strong>Creator, Showrunner, and Co-Producer of Teen Summit 2.0</strong></p>
+    <p>Dr. McKee created the Flip the Script methodology and founded the Communiversity Public Media Project. She currently serves as Chancellor's Fellow at the University of Illinois Urbana-Champaign Office of Public Engagement.</p>
+
+    <h3>Ms. Sheila Johnson</h3>
+    <p><strong>Founding Partner</strong></p>
+    <p>Distinguished UIUC Alumna, billionaire businesswoman, Vice Chairman and Partner of Monumental Sports & Entertainment, and Global Ambassador for CARE. Ms. Johnson provided the seed capital and opportunity to resurrect Teen Summit for today's youth.</p>
+  </section>
+
+  <!-- Philosophy -->
+  <section>
+    <h2>Program Philosophy</h2>
+
+    <h3>Three Forms of Capital Development</h3>
+
+    <h4>Intellectual Capital</h4>
+    <ul>
+      <li>Critical thinking through debate</li>
+      <li>Cultural knowledge through musicology</li>
+      <li>Media literacy through podcasting</li>
+    </ul>
+
+    <h4>Social Capital</h4>
+    <ul>
+      <li>Networking with peers and professionals</li>
+      <li>Building relationships across communities</li>
+      <li>Developing communication skills</li>
+    </ul>
+
+    <h4>Financial Capital</h4>
+    <ul>
+      <li>Personal brand development</li>
+      <li>Social media monetization strategies</li>
+      <li>Professional portfolio building</li>
+    </ul>
+
+    <h3>Communiversity Approach</h3>
+    <p>Teen Summit 2.0 is part of the Communiversity Public Media Project—a Land Grant Institution initiative that believes education should serve the community. The program connects academic rigor with real-world media production, creating opportunities for youth to develop valuable skills while addressing important civic issues.</p>
+  </section>
+
+  <!-- FAQs -->
+  <section>
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>General Questions</h3>
+
+    <p><strong>Q: Is Teen Summit 2.0 free to participate?</strong></p>
+    <p>A: Yes, the program is free for selected Summiters.</p>
+
+    <p><strong>Q: How long is the program?</strong></p>
+    <p>A: 12 weeks, running in Spring 2026.</p>
+
+    <p><strong>Q: Do I need any special equipment?</strong></p>
+    <p>A: No, all equipment is provided during the program.</p>
+
+    <p><strong>Q: Can I participate remotely?</strong></p>
+    <p>A: The program includes in-person filming and activities, so local participation is required.</p>
+
+    <h3>Application Questions</h3>
+
+    <p><strong>Q: What are you looking for in applicants?</strong></p>
+    <p>A: We seek passionate teens interested in civic engagement, willing to learn, and committed to the 12-week program.</p>
+
+    <p><strong>Q: When is the application deadline?</strong></p>
+    <p>A: Check the website for current application deadlines.</p>
+
+    <p><strong>Q: How competitive is the selection?</strong></p>
+    <p>A: The program is selective, but we encourage all interested teens to apply.</p>
+
+    <p><strong>Q: Can I apply again if not selected?</strong></p>
+    <p>A: Yes, you can reapply in future program cycles.</p>
+
+    <h3>Technical Questions</h3>
+
+    <p><strong>Q: What browsers work best?</strong></p>
+    <p>A: The site works on all modern browsers (Chrome, Firefox, Safari, Edge).</p>
+
+    <p><strong>Q: Can I use the site on my phone?</strong></p>
+    <p>A: Yes, the entire platform is mobile-friendly.</p>
+
+    <p><strong>Q: What if I forget my password?</strong></p>
+    <p>A: Contact the program administrator for password reset assistance.</p>
+
+    <p><strong>Q: How do I upload large video files?</strong></p>
+    <p>A: The platform supports files up to 500MB with a drag-and-drop uploader.</p>
+  </section>
+
+  <!-- Support -->
+  <section>
+    <h2>Support and Contact</h2>
+
+    <h3>Need Help?</h3>
+
+    <p><strong>General Inquiries:</strong> Use the Contact form on the website</p>
+    <p><strong>Technical Issues:</strong> Contact your program coordinator</p>
+    <p><strong>Application Questions:</strong> Submit through the application form or contact page</p>
+    <p><strong>Parent Questions:</strong> Use the Parent Portal or contact form</p>
+    <p><strong>Educator Resources:</strong> Access the Educator Portal or submit inquiry</p>
+  </section>
+
+  <!-- Acknowledgments -->
+  <section>
+    <h2>Acknowledgments</h2>
+    <p>Teen Summit 2.0 is made possible through the support of:</p>
+    <ul>
+      <li><strong>State of Illinois</strong> - Supporting youth civic engagement</li>
+      <li><strong>Governor JB Pritzker</strong> - Commitment to education, equity, and opportunity</li>
+      <li><strong>Representative Carol Ammons</strong> - Advocacy for Central Illinois youth</li>
+      <li><strong>Congressional Black Caucus</strong> - Leadership in justice and equity</li>
+      <li><strong>Ms. Sheila Johnson</strong> - Seed capital and founding partnership</li>
+    </ul>
+  </section>
+
+  <!-- Conclusion -->
+  <section>
+    <h2>Conclusion</h2>
+    <p>Teen Summit 2.0 is more than a program—it's a transformation journey. Through debate, musicology, and podcasting, young people develop the skills, knowledge, and networks to become civic leaders and media-savvy changemakers.</p>
+    <p>Whether you're a prospective Summiteer, parent, educator, or community supporter, this platform provides the tools and resources to engage with this important work.</p>
+
+    <div class="callout">
+      <h3>Ready to Get Started?</h3>
+      <p>Visit the Teen Summit 2.0 website and begin your journey today!</p>
+    </div>
+  </section>
+
+  <div class="brand-bar"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p><strong>Document Version:</strong> 1.0</p>
+    <p><strong>Last Updated:</strong> November 2025</p>
+    <p><strong>For Questions:</strong> Contact through website contact form</p>
+    <p style="margin-top: 20px; font-style: italic;">This guide is designed for the "untrained ear"—anyone can understand and use the Teen Summit 2.0 platform, regardless of technical expertise. Welcome to the REMIX!</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Teen Summit 2.0 - Robots.txt
+# Allow all compliant web crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://teensummit2.replit.app/sitemap.xml
+
+# Disallow admin and authenticated areas
+Disallow: /admin-portal
+Disallow: /dashboard
+Disallow: /parent-portal
+Disallow: /educator-portal
+Disallow: /login
+Disallow: /register
+
+# Allow public pages
+Allow: /
+Allow: /episodes
+Allow: /blog
+Allow: /dossiers
+Allow: /contact
+Allow: /acknowledgments
+Allow: /apply/
+Allow: /newsletter
+Allow: /terms
+Allow: /privacy
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
